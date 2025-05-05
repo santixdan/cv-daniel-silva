@@ -20,7 +20,7 @@
           CV - Daniel Silva
         </q-toolbar-title>
       </q-toolbar>
-      <q-tabs v-model="activeTab" narrow-indicator dense class="text-black">
+      <q-tabs v-model="activeTab" narrow-indicator dense class="text-black" @update:model-value="scrollTo">
         <q-tab name="home" @click="scrollTo('home')"><i>Home</i></q-tab>
         <q-tab name="aboutMe" @click="scrollTo('aboutMe')"><i>About me</i></q-tab>
         <q-tab name="projects" @click="scrollTo('projects')"><i>Projects</i></q-tab>
@@ -335,17 +335,17 @@ function resetForm() {
   formData.value = { name: '', email: '', message: '', phone: '' }
 }
 
-function scrollTo(id) {
-  const el = document.getElementById(id);
+function scrollTo(tabName) {
+  const el = document.getElementById(tabName)
   if (el) {
-    const headerOffset = 100; // Ajusta esto según el tamaño de tu header
-    const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerOffset;
+    const headerOffset = 100
+    const elementPosition = el.getBoundingClientRect().top + window.pageYOffset
+    const offsetPosition = elementPosition - headerOffset
 
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth"
-    });
+    })
   }
 }
 
