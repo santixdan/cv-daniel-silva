@@ -12,7 +12,7 @@
       </q-toolbar> -->
       <q-toolbar>
         <q-toolbar-title style="font-family: mixone; font-weight: bolder;" align="center">
-          <a target="_blanck" href="https://www.instagram.com/santixdan">
+          <a target="_blanck" :href="insta">
             <q-avatar class="cursor-pointer">
               <img src="./assets/images/Mi foto - Daniel Silva.jpg">
             </q-avatar>
@@ -31,7 +31,7 @@
     <q-page-sticky position="bottom-right" :offset="[18, 18]" style="z-index: 10;">
       <q-fab flat color="white" class="bg-black" icon="assignment_ind" direction="up">
         <q-fab-action class="bg-white">
-          <a href="https://www.linkedin.com/in/daniel-silva-780858303" target="_blank">
+          <a :href="linkedin" target="_blank">
             <q-avatar size="40px">
               <img src="./assets/images/linkedin.png" alt="LinkedIn">
               <q-tooltip anchor="center right" self="center left" :offset="[10, 10]">
@@ -41,7 +41,7 @@
           </a>
         </q-fab-action>
         <q-fab-action class="bg-white">
-          <a href="https://wa.me/573043960375?text=Hola%2C%20quiero%20saber%20más%20sobre%20tu%20trabajo"
+          <a :href="whats"
             target="_blank">
             <q-avatar size="40px">
               <img src="./assets/images/whatsapp.png" alt="WhatsApp">
@@ -52,7 +52,7 @@
           </a>
         </q-fab-action>
         <q-fab-action class="bg-white">
-          <a href="mailto:danysilva.2202@gmail.com" target="_blank">
+          <a :href="mail" target="_blank">
             <q-avatar size="40px">
               <img src="./assets/images/mail.png" alt="Mail">
               <q-tooltip anchor="center right" self="center left" :offset="[10, 10]">
@@ -62,7 +62,7 @@
           </a>
         </q-fab-action>
         <q-fab-action class="bg-white">
-          <a href="https://github.com/santixdan" target="_blank">
+          <a :href="github" target="_blank">
             <q-avatar size="40px">
               <img src="./assets/images/github.png" alt="GitHub">
               <q-tooltip anchor="center right" self="center left" :offset="[10, 10]">
@@ -158,7 +158,7 @@
               <div class="text-h5" align="center"><i>RapidBite</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ rapidbite }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline href="https://taller-7gi5.onrender.com/RAPID%20BITE%20(1)/index.html"
+              <div align="center"><q-btn outline :href="rapid"
                   target="_blank"><i>Visit</i></q-btn></div>
             </q-card-section>
           </q-card>
@@ -171,7 +171,7 @@
               <div class="text-h5" align="center"><i>Ahorcado</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ ahorcado }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline href="https://ahorcado-039k.onrender.com/"
+              <div align="center"><q-btn outline :href="ahorcado_url"
                   target="_blank"><i>Visit</i></q-btn>
               </div>
             </q-card-section>
@@ -185,7 +185,7 @@
               <div class="text-h5" align="center"><i>Walk In Style</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ wis }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline href="https://wis.onrender.com" target="_blank"><i>Visit</i></q-btn>
+              <div align="center"><q-btn outline :href="wis_url" target="_blank"><i>Visit</i></q-btn>
               </div>
             </q-card-section>
           </q-card>
@@ -198,7 +198,7 @@
               <div class="text-h5" align="center"><i>Hotel Paraíso</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ paraiso }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline href="https://hotelparaiso.onrender.com"
+              <div align="center"><q-btn outline :href="paraiso_url"
                   target="_blank"><i>Visit</i></q-btn></div>
             </q-card-section>
           </q-card>
@@ -211,7 +211,7 @@
               <div class="text-h5" align="center"><i>Red Void</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ redvoid }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline href="https://redvoid-media.onrender.com"
+              <div align="center"><q-btn outline :href="red_url"
                   target="_blank"><i>Visit</i></q-btn></div>
             </q-card-section>
           </q-card>
@@ -256,7 +256,7 @@
     <q-footer elevated class="bg-black text-white header">
       <q-toolbar>
         <q-toolbar-title style="font-family: mixone; font-weight: bolder;" align="center"><q-btn flat round dense
-            icon="code" href="https://instagram.com/santixdan/" target="_blank" />CV - Daniel Silva</q-toolbar-title>
+            icon="code" :href="insta" target="_blank" />CV - Daniel Silva</q-toolbar-title>
       </q-toolbar>
     </q-footer>
   </q-layout>
@@ -273,7 +273,17 @@ let wis = ref("E-commerce website focused on selling footwear, developed with HT
 let paraiso = ref("Website for a resort hotel, built with HTML, CSS, JavaScript, and Vue.js. It showcases rooms, activities, and services with a modern and intuitive design.")
 let redvoid = ("Functional social network developed with Vue.js, HTML, CSS, and JavaScript, which allows posting, liking, and commenting. It uses a REST API built with Node.js and MongoDB as the backend.")
 const activeTab = ref('home')
-let mail = ref(import.meta.env.VITE_EMAIL)
+let email = ref(import.meta.env.VITE_EMAIL)
+let mail = ref(import.meta.env.VITE_MAIL)
+let red_url = ref(import.meta.env.VITE_RED)
+let paraiso_url = ref(import.meta.env.VITE_HOTEL)
+let rapid = ref(import.meta.env.VITE_RAPID)
+let insta = ref(import.meta.env.VITE_INSTAGRAM)
+let linkedin = ref(import.meta.env.VITE_LINKEDIN)
+let github = ref(import.meta.env.VITE_GITHUB)
+let wis_url = ref(import.meta.env.VITE_WIS)
+let whats = ref(import.meta.env.VITE_WHATS)
+let ahorcado_url = ref(import.meta.env.VITE_AHORCADO)
 let loading = ref(false)
 
 const formData = ref({
@@ -286,7 +296,7 @@ const formData = ref({
 async function handleSubmit() {
   loading.value = true
   try {
-    const response = await fetch(mail.value, {
+    const response = await fetch(email.value, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
