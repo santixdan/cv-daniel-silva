@@ -151,18 +151,6 @@
         </h5>
         <div class="q-pa-md q-gutter-md" align="center">
           <q-card dark class="bg-transparent my-card2">
-            <img class="col-8" src="./assets/images/pc-rapidbite.jpeg" />
-            <q-separator />
-
-            <q-card-section vertical align="left" class="text-black col-5">
-              <div class="text-h5" align="center"><i>RapidBite</i> </div>
-              <div class="text-subtitle2" align="center"><i>{{ rapidbite }}</i> </div>
-              <br><br>
-              <div align="center"><q-btn outline :href="rapid"
-                  target="_blank"><i>Visit</i></q-btn></div>
-            </q-card-section>
-          </q-card>
-          <q-card dark class="bg-transparent my-card2">
             <img class="col-8" src="./assets/images/pc-ahorcado.jpeg" />
 
             <q-separator />
@@ -268,7 +256,6 @@ import { Notify } from 'quasar'
 
 let description = ref("Software Analysis and Development student at SENA, currently doing an internship. Passionate about programming and developing technological solutions, with a solid foundation in programming logic, web development, and databases. I am looking for a job opportunity that allows me to continue learning, strengthen my technical skills, and actively contribute to software development projects.")
 let ahorcado = ref("A classic hangman game developed with HTML, CSS, and JavaScript, focusing on basic language logic and user interaction through the DOM.")
-let rapidbite = ref("A fast-food website created with HTML and CSS, featuring an attractive visual design and focus on menu presentation and promotions.")
 let wis = ref("E-commerce website focused on selling footwear, developed with HTML, CSS, and JavaScript, including interactive features to enhance the user experience.")
 let paraiso = ref("Website for a resort hotel, built with HTML, CSS, JavaScript, and Vue.js. It showcases rooms, activities, and services with a modern and intuitive design.")
 let redvoid = ("Functional social network developed with Vue.js, HTML, CSS, and JavaScript, which allows posting, liking, and commenting. It uses a REST API built with Node.js and MongoDB as the backend.")
@@ -277,7 +264,6 @@ let email = ref(import.meta.env.VITE_EMAIL)
 let mail = ref(import.meta.env.VITE_MAIL)
 let red_url = ref(import.meta.env.VITE_RED)
 let paraiso_url = ref(import.meta.env.VITE_HOTEL)
-let rapid = ref(import.meta.env.VITE_RAPID)
 let insta = ref(import.meta.env.VITE_INSTAGRAM)
 let linkedin = ref(import.meta.env.VITE_LINKEDIN)
 let github = ref(import.meta.env.VITE_GITHUB)
@@ -415,7 +401,18 @@ onBeforeUnmount(() => {
 }
 
 body {
-  background-image: url("");
+  position: relative;
+  margin: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/images/background.jpg");
   background-size: cover;
   background-position: center;
 }
