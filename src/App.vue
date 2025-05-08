@@ -11,7 +11,7 @@
         </q-toolbar-title>
       </q-toolbar> -->
       <q-toolbar>
-        <q-toolbar-title style="font-family: mixone; font-weight: bolder;" align="center">
+        <q-toolbar-title style="font-family: mixone; font-weight: bolder; " align="center" id="cv-silva">
           <a target="_blanck" :href="insta">
             <q-avatar class="cursor-pointer">
               <img src="./assets/images/Mi foto - Daniel Silva.jpg">
@@ -20,7 +20,7 @@
           CV - Daniel Silva
         </q-toolbar-title>
       </q-toolbar>
-      <q-tabs v-model="activeTab" narrow-indicator dense class="text-black" @update:model-value="scrollTo">
+      <q-tabs v-model="activeTab" narrow-indicator dense color="primary" @update:model-value="scrollTo">
         <q-tab name="home" @click="scrollTo('home')"><i>Home</i></q-tab>
         <q-tab name="aboutMe" @click="scrollTo('aboutMe')"><i>About me</i></q-tab>
         <q-tab name="projects" @click="scrollTo('projects')"><i>Projects</i></q-tab>
@@ -41,8 +41,7 @@
           </a>
         </q-fab-action>
         <q-fab-action class="bg-white">
-          <a :href="whats"
-            target="_blank">
+          <a :href="whats" target="_blank">
             <q-avatar size="40px">
               <img src="./assets/images/whatsapp.png" alt="WhatsApp">
               <q-tooltip anchor="center right" self="center left" :offset="[10, 10]">
@@ -75,8 +74,7 @@
     </q-page-sticky>
 
     <q-page-container>
-      <div class="q-pa-xs" align="center" id="home"
-        style="height: 85vh; align-content: center; background-color: rgba(128, 128, 128, 0.11);">
+      <div class="q-pa-xs" align="center" id="home">
         <h2 id="principalTitles">
           Hey, I'm Daniel Silva
         </h2>
@@ -112,27 +110,27 @@
 
             <q-card-section class="text-black">
               <div class="q-pt-sm row q-gutter-md justify-center">
-                <q-badge class="skill-badge justify-center">JavaScript
+                <q-badge class="skill-badge justify-center" oncopy="return false" style="user-select: none;">JavaScript
                 </q-badge>
-                <q-badge class="skill-badge justify-center">Python
+                <q-badge class="skill-badge justify-center" oncopy="return false" style="user-select: none;">Python
                 </q-badge>
-                <q-badge class="skill-badge justify-center">Java
+                <q-badge class="skill-badge justify-center" oncopy="return false" style="user-select: none;">Java
                 </q-badge>
-                <q-badge class="skill-badge justify-center">HTML
+                <q-badge class="skill-badge justify-center" oncopy="return false" style="user-select: none;">HTML
                 </q-badge>
-                <q-badge class="skill-badge justify-center">CSS
+                <q-badge class="skill-badge justify-center" oncopy="return false" style="user-select: none;">CSS
                 </q-badge>
-                <q-badge class="skill-badge justify-center">Vue.js
+                <q-badge class="skill-badge justify-center" oncopy="return false" style="user-select: none;">Vue.js
                 </q-badge>
-                <q-badge class="skill-badge justify-center">Node.js
+                <q-badge class="skill-badge justify-center" oncopy="return false" style="user-select: none;">Node.js
                 </q-badge>
-                <q-badge class="skill-badge justify-center">MongoDB
+                <q-badge class="skill-badge justify-center" oncopy="return false" style="user-select: none;">MongoDB
                 </q-badge>
-                <q-badge class="skill-badge justify-center">MySQL
+                <q-badge class="skill-badge justify-center" oncopy="return false" style="user-select: none;">MySQL
                 </q-badge>
-                <q-badge class="skill-badge justify-center">GIT
+                <q-badge class="skill-badge justify-center" oncopy="return false" style="user-select: none;">GIT
                 </q-badge>
-                <q-badge class="skill-badge justify-center">GitHub
+                <q-badge class="skill-badge justify-center" oncopy="return false" style="user-select: none;">GitHub
                 </q-badge>
               </div>
 
@@ -159,8 +157,7 @@
               <div class="text-h5" align="center"><i>Ahorcado</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ ahorcado }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline :href="ahorcado_url"
-                  target="_blank"><i>Visit</i></q-btn>
+              <div align="center"><q-btn outline :href="ahorcado_url" target="_blank" class="visit_btn"><i>Visit</i></q-btn>
               </div>
             </q-card-section>
           </q-card>
@@ -173,7 +170,7 @@
               <div class="text-h5" align="center"><i>Walk In Style</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ wis }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline :href="wis_url" target="_blank"><i>Visit</i></q-btn>
+              <div align="center"><q-btn outline :href="wis_url" target="_blank" class="visit_btn"><i>Visit</i></q-btn>
               </div>
             </q-card-section>
           </q-card>
@@ -186,8 +183,7 @@
               <div class="text-h5" align="center"><i>Hotel Paraíso</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ paraiso }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline :href="paraiso_url"
-                  target="_blank"><i>Visit</i></q-btn></div>
+              <div align="center"><q-btn outline :href="paraiso_url" target="_blank" class="visit_btn"><i>Visit</i></q-btn></div>
             </q-card-section>
           </q-card>
           <q-card dark class="bg-transparent my-card2">
@@ -199,8 +195,7 @@
               <div class="text-h5" align="center"><i>Red Void</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ redvoid }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline :href="red_url"
-                  target="_blank"><i>Visit</i></q-btn></div>
+              <div align="center"><q-btn outline :href="red_url" target="_blank" class="visit_btn"><i>Visit</i></q-btn></div>
             </q-card-section>
           </q-card>
         </div>
@@ -398,6 +393,73 @@ onBeforeUnmount(() => {
 .skill-badge:hover {
   width: 85px;
   height: 35px;
+  font-weight: bold;
+}
+
+/* JavaScript */
+.skill-badge:hover:first-child {
+  background-color: #F0DB4F;
+  color: #323330;
+}
+
+/* Python */
+.skill-badge:hover:nth-child(2) {
+  background-color: #306998;
+  color: #FFD43B;
+}
+
+/* Java */
+.skill-badge:hover:nth-child(3) {
+  background-color: rgb(209, 209, 209);
+  color: #ED1D25;
+}
+
+/* HTML */
+.skill-badge:hover:nth-child(4) {
+  background-color: #E34C26;
+  color: #EBEBEB;
+}
+
+/* CSS */
+.skill-badge:hover:nth-child(5) {
+  background-color: #2565AE;
+  color: #D5F3FE;
+}
+
+/* Vue */
+.skill-badge:hover:nth-child(6) {
+  background-color: #41B883;
+  color: #35495E;
+}
+
+/* Node */
+.skill-badge:hover:nth-child(7) {
+  background-color: #3C873A;
+  color: #303030;
+}
+
+/* Mongo */
+.skill-badge:hover:nth-child(8) {
+  background-color: #3FA037;
+  color: #E8E7D5;
+}
+
+/* SQL */
+.skill-badge:hover:nth-child(9) {
+  background-color: #00758F;
+  color: #F29111;
+}
+
+/* git */
+.skill-badge:hover:nth-child(10) {
+  background-color: #F1502F;
+  color: #EBEBEB;
+}
+
+/* github */
+.skill-badge:hover:last-child {
+  background-color: #211F1F;
+  color: #FFFFFF;
 }
 
 body {
@@ -453,8 +515,8 @@ body::before {
   font-family: mixone;
   font-weight: bolder;
   margin: 0px;
-  text-decoration: underline;
   animation: fadeInSide 1s ease-out;
+  transition: 0.3s;
 }
 
 #secondaryTitle {
@@ -463,6 +525,14 @@ body::before {
 
 #aboutMe {
   height: 85vh;
+}
+
+/* style="height: 85vh; align-content: center; background-color: rgba(128, 128, 128, 0.11);" */
+
+#home{
+  height: 85vh;
+  align-content: center;
+  background-color: rgba(128, 128, 128, 0.11);
 }
 
 @media screen and (max-width:500px) and (min-width:320px) {
@@ -484,13 +554,18 @@ body::before {
   }
 
   #aboutMe {
-    height: 150vh;
+    /* margin-top: 10%; */
+    height: auto;
+  }
+
+  #home{
+    height: 80vh;
   }
 }
 
 @media screen and (max-width:1155px) and (min-width:501px) {
   #aboutMe {
-    height: 150vh;
+    height: auto;
   }
 }
 </style>
