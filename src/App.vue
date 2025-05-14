@@ -2,14 +2,6 @@
   <q-layout view="hHh LpR fff">
 
     <q-header elevated class="bg-white text-black header" height-hint="98">
-      <!-- <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="./assets/images/Mi foto - Daniel Silva.jpg">
-          </q-avatar>
-          Daniel Silva
-        </q-toolbar-title>
-      </q-toolbar> -->
       <q-toolbar>
         <q-toolbar-title style="font-family: mixone; font-weight: bolder; " align="center" id="cv-silva">
           <a target="_blanck" :href="insta">
@@ -149,7 +141,9 @@
         </h5>
         <div class="q-pa-md q-gutter-md" align="center">
           <q-card dark class="bg-transparent my-card2">
-            <img class="col-8" src="./assets/images/pc-ahorcado.jpeg" />
+            <a :href="ahorcado_url" target="_blank">
+              <q-img class="col-8" src="./assets/images/pc-ahorcado.jpeg" />
+            </a>
 
             <q-separator />
 
@@ -157,12 +151,15 @@
               <div class="text-h5" align="center"><i>Ahorcado</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ ahorcado }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline :href="ahorcado_url" target="_blank" class="visit_btn"><i>Visit</i></q-btn>
+              <div align="center"><q-btn outline :href="ahorcado_url" target="_blank"
+                  class="visit_btn"><i>Visit</i></q-btn>
               </div>
             </q-card-section>
           </q-card>
           <q-card dark class="bg-transparent my-card2">
-            <img class="col-8" src="./assets/images/pc-wis.jpeg" />
+            <a :href="wis_url" target="_blank">
+              <q-img class="col-8" src="./assets/images/pc-wis.jpeg" />
+            </a>
 
             <q-separator />
 
@@ -175,7 +172,10 @@
             </q-card-section>
           </q-card>
           <q-card dark class="bg-transparent my-card2">
-            <img class="col-8" src="./assets/images/pc-paraiso.jpeg" />
+            <a :href="paraiso_url" target="_blank">
+              <q-img src="./assets/images/pc-paraiso.jpeg" class="col-8" />
+            </a>
+
 
             <q-separator />
 
@@ -183,11 +183,14 @@
               <div class="text-h5" align="center"><i>Hotel Paraíso</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ paraiso }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline :href="paraiso_url" target="_blank" class="visit_btn"><i>Visit</i></q-btn></div>
+              <div align="center"><q-btn outline :href="paraiso_url" target="_blank"
+                  class="visit_btn"><i>Visit</i></q-btn></div>
             </q-card-section>
           </q-card>
           <q-card dark class="bg-transparent my-card2">
-            <img class="col-8" src="./assets/images/pc-void.jpeg" />
+            <a :href="red_url" target="_blank">
+              <q-img class="col-8" src="./assets/images/pc-void.jpeg" />
+            </a>
 
             <q-separator />
 
@@ -195,7 +198,8 @@
               <div class="text-h5" align="center"><i>Red Void</i> </div>
               <div class="text-subtitle2" align="center"><i>{{ redvoid }}</i> </div>
               <br><br>
-              <div align="center"><q-btn outline :href="red_url" target="_blank" class="visit_btn"><i>Visit</i></q-btn></div>
+              <div align="center"><q-btn outline :href="red_url" target="_blank" class="visit_btn"><i>Visit</i></q-btn>
+              </div>
             </q-card-section>
           </q-card>
         </div>
@@ -524,13 +528,11 @@ body::before {
 }
 
 #aboutMe {
-  height: 85vh;
+  height: 85dvh;
 }
 
-/* style="height: 85vh; align-content: center; background-color: rgba(128, 128, 128, 0.11);" */
-
-#home{
-  height: 85vh;
+#home {
+  height: 85dvh;
   align-content: center;
   background-color: rgba(128, 128, 128, 0.11);
 }
@@ -554,12 +556,11 @@ body::before {
   }
 
   #aboutMe {
-    /* margin-top: 10%; */
     height: auto;
   }
 
-  #home{
-    height: 80vh;
+  #home {
+    height: 80dvh;
   }
 }
 
