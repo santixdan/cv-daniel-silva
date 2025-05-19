@@ -4,14 +4,15 @@
     <q-header elevated class="bg-white text-black header" height-hint="98">
       <q-toolbar>
         <q-toolbar-title style="font-family: mixone; font-weight: bolder; " align="center" id="cv-silva">
-          <a target="_blanck" :href="insta">
-            <q-avatar class="cursor-pointer">
-              <img src="./assets/images/Mi foto - Daniel Silva.jpg">
-            </q-avatar>
-          </a>
+           <q-avatar ><!--class="cursor-pointer" -->
+             <img src="./assets/images/Mi foto - Daniel Silva.jpg" ><!--@click="modal = true" -->
+          </q-avatar>
           CV - Daniel Silva
         </q-toolbar-title>
       </q-toolbar>
+      <!-- <q-dialog v-model="modal">
+        <q-img src="./assets/images/Mi foto - Daniel Silva.jpg" />
+      </q-dialog> -->
       <q-tabs v-model="activeTab" narrow-indicator dense color="primary" @update:model-value="scrollTo">
         <q-tab name="home" @click="scrollTo('home')"><i>Home</i></q-tab>
         <q-tab name="aboutMe" @click="scrollTo('aboutMe')"><i>About me</i></q-tab>
@@ -246,6 +247,8 @@
             icon="code" :href="insta" target="_blank" />CV - Daniel Silva</q-toolbar-title>
       </q-toolbar>
     </q-footer>
+
+
   </q-layout>
 </template>
 
@@ -270,6 +273,7 @@ let wis_url = ref(import.meta.env.VITE_WIS)
 let whats = ref(import.meta.env.VITE_WHATS)
 let ahorcado_url = ref(import.meta.env.VITE_AHORCADO)
 let loading = ref(false)
+let modal = ref(false)
 
 const formData = ref({
   name: '',
